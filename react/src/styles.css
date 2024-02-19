@@ -1,0 +1,71 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #130f40; /* Dark blue background similar to the image provided */
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05); /* Slight white tint for the game area */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 5px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #130f40; /* Same as the background for continuity */
+  border: 1px solid #ecf0f1; /* Light colored border for visibility */
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ecf0f1; /* Light color for text to contrast with the background */
+}
+
+/* Remove border from the bottom of the last row and right of the last column */
+.square:nth-child(3n), .square:nth-last-child(-n+3) {
+  border-right: none;
+}
+
+.square:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+.status {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #ecf0f1; /* Light color for status text for visibility */
+}
+
+.restart-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #e74c3c; /* Red color for the button */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transition for smooth color change */
+}
+
+.restart-button:hover {
+  background-color: #c0392b; /* Darker shade of red on hover */
+}
